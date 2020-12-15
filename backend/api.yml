@@ -1,0 +1,71 @@
+swagger: "2.0"
+info:
+  version: "1.0.0"
+  title: "Recipe Book"
+  
+host: "jeff.com"
+basePath: "/v1"
+schemes:
+- "https"
+- "http"
+paths:
+  /recipe:
+    post:
+      tags:
+      - "Recipe"
+      summary: "Adding a recipe to the catalog"
+      description: ""
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Recipe object that needs to be added to the catalog"
+        required: true
+        schema:
+          $ref: "#/definitions/recipe"
+      responses:
+        "200":
+          description: "All good"
+        "405":
+          description: "Invalid input"
+    get:
+      tags:
+      - "Recipe"
+      summary: "Get all recipes in the catalog"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      responses:
+        "200":
+          description: "Found the recipes"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/recipe"
+        "404":
+          description: "Can't find Recipes"
+    
+definitions:
+  recipe:
+    type: "object"
+    properties:
+      id:
+        type: "integer"
+      type:
+        type: "string"
+      time:
+        type: "string"
+      ingredients: 
+        type: "array"
+        items: 
+          type: "string"
+      steps:
+        type: "array"
+        items:
+          type: "string"
+      picture:
+        type: "string"
