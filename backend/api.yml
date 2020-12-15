@@ -10,6 +10,23 @@ schemes:
 - "http"
 paths:
   /recipe:
+    get:
+      tags:
+      - "Recipe"
+      summary: "Get all recipes in the catalog"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      responses:
+        "200":
+          description: "Found the recipes"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/recipe"
+        "404":
+          description: "Can't find Recipes"
     post:
       tags:
       - "Recipe"
@@ -31,24 +48,24 @@ paths:
           description: "All good"
         "405":
           description: "Invalid input"
+  /recipe/{id}:
     get:
       tags:
       - "Recipe"
-      summary: "Get all recipes in the catalog"
       consumes:
       - "application/json"
       produces:
       - "application/json"
+      parameters:
+      - in: "path"
+        name: "id"
+        required: true
+        type: integer
       responses:
         "200":
-          description: "Found the recipes"
+          description: "Fond the recipe"
           schema:
-            type: "array"
-            items:
-              $ref: "#/definitions/recipe"
-        "404":
-          description: "Can't find Recipes"
-    
+            $ref: "#/definitions/recipe"
 definitions:
   recipe:
     type: "object"
@@ -62,10 +79,24 @@ definitions:
       ingredients: 
         type: "array"
         items: 
-          type: "string"
+          $ref: "#/definitions/ingredient"
       steps:
         type: "array"
         items:
           type: "string"
       picture:
         type: "string"
+        
+  ingredient:
+    type: "object"
+    properties:
+      unit:
+        type: "string"
+      quantity:
+        type: "number"
+      ingredient:
+        type: "string"
+      
+      
+      
+      
