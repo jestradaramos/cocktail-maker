@@ -1,0 +1,44 @@
+{"drinks" : [
+    {   
+        "id": 1,
+        "name": "Old Fashion",
+        "year": 1895,
+        "description": "Classic Whiskey Drink",
+        "ingredients": ["Bourbon", "Lemon", "Bitters", "Simple Syrup"]
+    },
+    {   
+        "id": 2,
+        "name": "Whiskey Sour",
+        "year": 1862,
+        "description": "Classic Sour Drink",
+        "ingredients": ["Bourbon", "Lemon", "Bitters", "Simple Syrup"]
+    },
+    {   
+        "id": 3,
+        "name": "Gin & Tonic",
+        "year": 1858,
+        "description": "Refreshing Drink",
+        "ingredients": ["Bourbon", "Lemon", "Bitters", "Simple Syrup"]
+    },
+    {   
+        "id": 4,
+        "name": "Espresso Martini",
+        "year": 1983,
+        "description": "Espresso Based Drink",
+        "ingredients": ["Bourbon", "Lemon", "Bitters", "Simple Syrup"]
+    },
+    {   
+        "id": 5,
+        "name": "Black Russian",
+        "year": 1949,
+        "description": "Coffee Based Drink",
+        "ingredients": ["Bourbon", "Lemon", "Bitters", "Simple Syrup"]
+    },
+    {   
+        "id": 6,
+        "name": "Moscow Mule",
+        "year": 1941,
+        "description": "Spicy and Refreshing Drink",
+        "ingredients": ["Bourbon", "Lemon", "Bitters", "Simple Syrup"]
+    }
+]}
